@@ -1,0 +1,72 @@
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.toggle-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
+}
+
+.toggle-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(67, 233, 123, 0.4);
+}
+
+.toggle-button:active {
+  transform: translateY(0);
+}
+
+.toggle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.3s ease-out;
+  color: white;
+  max-width: 500px;
+}
+
+.toggle-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.toggle-content p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.toggle-content img {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

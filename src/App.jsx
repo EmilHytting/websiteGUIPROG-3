@@ -1,12 +1,23 @@
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './assets/Components/Header/Header'
 import Footer from './assets/Components/Footer/Footer'
 import GridContainer from './assets/Components/GridContainer/GridContainer'
 import Card from './assets/Components/Card/Card'
+import Toggle from './assets/Components/Toggle/Toggle'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  // useEffect der logger til konsollen hver gang count ændres
+  useEffect(() => {
+    console.log(`Count er nu: ${count}`)
+  }, [count])
+
+  // Bonus: Ændrer sidens titel baseret på count
+  useEffect(() => {
+    document.title = `Count: ${count}`
+  }, [count])
 
   return (
     <div className="app-container">
@@ -21,6 +32,8 @@ function App() {
             Reset
           </button>
         </div>
+
+        <Toggle />
 
         <GridContainer columns={3} rows={3}>
           <Card
@@ -88,7 +101,6 @@ function App() {
           />
         </GridContainer>
       </main>
-
       <Footer />
     </div>
   )
