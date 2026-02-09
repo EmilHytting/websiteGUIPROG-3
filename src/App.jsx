@@ -9,6 +9,16 @@ import Toggle from './assets/Components/Toggle/Toggle'
 function App() {
   const [count, setCount] = useState(0)
 
+  // Funktion der sender en velkomstbesked
+  const sendVelkomstBesked = () => {
+    console.log('Velkommen til appen! 🎉')
+  }
+
+  // useEffect uden dependency - kører kun ved første load
+  useEffect(() => {
+    sendVelkomstBesked()
+  }, [])
+
   // useEffect der logger til konsollen hver gang count ændres
   useEffect(() => {
     console.log(`Count er nu: ${count}`)
